@@ -1,0 +1,33 @@
+/* ============================================= */
+/* ===== PAGE SPECIFIC: ORGANIZATIONAL CHART (IMAGE DISPLAY) ===== */
+/* ============================================= */
+
+#org-chart-page {
+  font-family: 'Vazirmatn', sans-serif; /* اطمینان از اعمال فونت فارسی */
+  color: #333;
+}
+
+#org-chart-page h1 {
+  color: var(--primary-color); /* استفاده از رنگ اصلی تم */
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+/* استایل برای تصویر چارت سازمانی */
+#org-chart-page img {
+  display: block; /* برای حذف فضای اضافه زیر تصویر */
+  margin-left: auto;
+  margin-right: auto; /* برای وسط چین کردن تصویر */
+}
+
+/* در صورتی که بخواهید تصویر در اندازه های کوچکتر بهتر نمایش داده شود */
+@media (max-width: 768px) {
+  #org-chart-page img {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  }
+  #org-chart-page h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+}

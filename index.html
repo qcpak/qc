@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0056b3" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="assets/images/logo-192.png" />
+    <link rel="icon" href="assets/images/logo-192.png" type="image/png" />
+
+    <title>کنترل کیفیت پاکشوما</title>
+
+    <!-- مسیرهای CSS کتابخانه‌ها -->
+    <link rel="stylesheet" href="assets/libs/jdp.min.css" />
+    <link rel="stylesheet" href="assets/libs/choices.min.css" />
+    <link rel="stylesheet" href="assets/libs/toastify.min.css" />
+
+    <!-- CSS های پروژه -->
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/css/shared.css" />
+
+    <!-- JS کتابخانه‌ها -->
+    <script src="assets/libs/html2canvas.min.js"></script>
+    <script src="assets/libs/sweetalert2.all.min.js"></script>
+    <script src="assets/libs/toastify.js"></script>
+    <script src="assets/libs/jdp.min.js"></script>
+    <script src="assets/libs/choices.min.js"></script>
+    <script src="assets/libs/pdfmake.min.js"></script>
+    <script src="assets/libs/vfs_fonts.js"></script>
+
+    <!-- فایل اصلی برنامه -->
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="container" id="app-root">
+      <header id="main-header">
+        <!-- منوی همبرگری در اینجا توسط جاوااسکریپت قرار می‌گیرد -->
+        <div id="page-menu-container" class="header-actions"></div>
+
+        <!-- عنوان صفحه که همیشه در وسط است -->
+        <div class="header-center">
+          <h1 id="header-title"></h1>
+        </div>
+
+        <!-- لوگو و کد مدرک که همیشه در سمت چپ است -->
+        <div id="header-branding-container" class="header-branding">
+          <span id="header-logo-text" class="logo-text">Pakshoma</span>
+          <span id="header-doc-code" class="doc-code"></span>
+        </div>
+      </header>
+
+      <div id="loader" class="loader-container" style="display: none">
+        <div class="loader"></div>
+      </div>
+
+      <main id="page-container"></main>
+    </div>
+
+    <!-- ===== تغییر اعمال شده: مسیر ثبت Service Worker اصلاح شد ===== -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          // مسیر ثبت را فقط به نام فایل 'service-worker.js' تغییر دهید.
+          // این فرض را بر این می‌گذارد که service-worker.js در همان دایرکتوری index.html قرار دارد.
+          navigator.serviceWorker
+            .register("service-worker.js")
+            .then((registration) => {
+              console.log(
+                "Service Worker registered with scope:",
+                registration.scope
+              );
+            })
+            .catch((error) => {
+              console.error("Service Worker registration failed:", error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

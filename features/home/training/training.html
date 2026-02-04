@@ -1,0 +1,67 @@
+
+<div id="training-page">
+  <style>
+    /* 
+         فقط استایل‌های غیرتکراری و ضروری برای چیدمان داخلی آموزش‌ها باقی می‌ماند.
+         استایل‌های nav-card، nav-grid، و welcome-message از اینجا حذف و به shared.css منتقل شده‌اند.
+    */
+    #training-page {
+      text-align: center;
+    }
+    
+    /* استایل برای محتوای آموزش‌های داخلی که به page-container تزریق می‌شود */
+    #training-content-detail {
+        padding-top: 20px;
+    }
+    .content-header {
+        text-align: right;
+        margin-bottom: 20px;
+    }
+    .page-content {
+        text-align: right;
+    }
+    .page-content h3 {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 5px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+  </style>
+
+  <div class="welcome-message">
+    <!-- عنوان 'آموزش‌ها' که در هدر نمایش داده می‌شود، از اینجا حذف شد -->
+    <p>راهنمای تصویری و متنی کار با سیستم. لطفاً بخش مورد نظر خود را برای شروع انتخاب کنید.</p>
+  </div>
+
+  <div class="nav-grid">
+    <!-- ۱. معرفی محصولات -->
+    <a href="#" class="nav-card" data-feature-path="/training/products-intro">
+      <i class="bi bi-box-seam"></i>
+      <h3>معرفی محصولات</h3>
+      <p>آشنایی با انواع محصولات پاکشوما</p>
+    </a>
+
+    <!-- ۲. قطعه شناسی -->
+    <a href="#" class="nav-card" data-feature-path="/training/parts-id">
+      <i class="bi bi-gear-wide-connected"></i>
+      <h3>قطعه شناسی</h3>
+      <p>آشنایی با قطعات اصلی و فرعی</p>
+    </a>
+
+    <!-- ۳. ابزار شناسی -->
+    <a href="#" class="nav-card" data-feature-path="/training/tools-id">
+      <i class="bi bi-tools"></i>
+      <h3>ابزار شناسی</h3>
+      <p>معرفی ابزارهای مورد نیاز</p>
+    </a>
+
+    <!-- ۴. عمومی -->
+    <a href="#" class="nav-card" data-feature-path="/training/general">
+      <i class="bi bi-info-circle"></i>
+      <h3>عمومی</h3>
+      <p>نکات و دستورالعمل‌های کلی</p>
+    </a>
+  </div>
+</div>
+<footer class="designer-credit">Designed by HRE</footer>
