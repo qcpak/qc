@@ -1,6 +1,11 @@
 {
   "name": "کنترل کیفیت پاکشوما",
   "short_name": "QC App",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef2f7",
+  "theme_color": "#0056b3",
   "icons": [
     {
       "src": "assets/images/logo-192.png",
@@ -12,9 +17,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#eef2f7",
-  "theme_color": "#0056b3"
+  ]
 }

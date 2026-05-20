@@ -58,12 +58,15 @@
 
     <!-- ===== تغییر اعمال شده: مسیر ثبت Service Worker اصلاح شد ===== -->
     <script>
-      if ("serviceWorker" in navigator) {
+      // جلوگیری از ثبت Service Worker داخل APK
+      const isAndroidApp =
+        window.location.protocol === "file:" ||
+        window.location.hostname === "localhost";
+
+      if ("serviceWorker" in navigator && !isAndroidApp) {
         window.addEventListener("load", () => {
-          // مسیر ثبت را فقط به نام فایل 'service-worker.js' تغییر دهید.
-          // این فرض را بر این می‌گذارد که service-worker.js در همان دایرکتوری index.html قرار دارد.
           navigator.serviceWorker
-            .register("service-worker.js")
+            .register("./service-worker.js")
             .then((registration) => {
               console.log(
                 "Service Worker registered with scope:",
